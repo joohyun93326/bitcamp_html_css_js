@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		/*
+			onload 이벤트 발생 시점 : body태그 안에 있는 모든 요소가 브라우저에 로딩된 후에 
+			function call() {}
+			1. <body onload="call()">
+			2. window.onload =call();
+			
+			call() 재사용 안할거다. load시점에만 쓰고 안 쓸거야 !
+			함수의 이름이 굳이 필요할까? >> 익명 함수
+			
+			page 모든 요소가 로딩된 후에 함수를 자동 호출 (이름 없는 익명 함수~)
+		*/
+		window.onload = function(){ //페이지 로딩이 끝난 후에 함수를 실행!
+			let out="";
+			out+="<ul>";
+				out+="<li>javascript</li>";
+				out+="<li>jquery</li>";
+				out+="<li>vue</li>";
+			out+="</ul>";
+			
+			document.body.innerHTML = out;
+			
+			//DOM >> 동적 >> 기존에 없던 것을 추가 . 삭제 . 변경
+	    	let header = document.createElement("h1");
+	    	//<h1></h1>
+	    	
+	    	let textnode = document.createTextNode("hello");
+	    	//hello
+	    	
+	    	header.appendChild(textnode);
+	    	//<h1>hello</h1>
+	    	
+	    	document.body.appendChild(header);
+	    	
+	    	//img 태그를 만들고 src 속성추가, body 자식으로 append 
+	    	let img = document.createElement("img"); //<img>
+	    	img.setAttribute("src","images/btn.png");
+	    	img.setAttribute("width","100");
+	    	img.setAttribute("height","100");
+	    	//<img src="images.btn.png" width="100" height="100">
+	    	document.body.appendChild(img);
+		}
+	</script>
+</head>
+<body>
+HELLO WORLD
+
+</body>
+</html>

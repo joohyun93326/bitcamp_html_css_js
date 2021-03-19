@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	
+	/*
+		javascript
+		- 웹 코딩 언어 > 해석, 실행은 웹 브라우저가 한다.
+		- 웹 브라우저 안에 자바스크립트 해석할 엔진을 가지고 있다. 
+		- 자바스크립트는 컴파일 언어가 아니다 == 클래스를 만들지 않는다 
+		- 라인 단위로 순서대로 실행된다.
+		- 객체지향 언어이다 (자바가 하는 것 다 한다) > 클래스 개념은 있다 
+					 
+		사용 이유
+		- html의 content, attribute 변경, 삭제, 추가 [동적]으로 !
+	    - css 속성 변경, 삭제, 추가 [동적]으로 ! 
+		- 유효성 검증(id입력여부, 주민번호 맞는지, 데이터가 숫자인지 등등)
+		- 동적인 웹 화면 구성 
+		- 전 세계적으로 1위 언어 
+		- jquery.js (내부적인 코드: javascript) >> 안에 있는 자원을 활용 > 생산성 극대화 
+		- angular.js(MVC), vue.js, react.js
+		- 우리나라 개발 회사 (javascript : Framework)
+		- 신규 개발 건은 vue.js, react.js (Front) 단점: 버전 변경되면 사라질 수도 있다 
+		- Front 개발자... 뷰나 리액트... 하셔야합니다 
+		
+		- javascript 언어가 웹 브라우저 없이 로컬 서버에서도 동작한다 (자바처럼)
+		- Node.js는 Chrome V8 JavaScript 엔진으로 빌드된 JavaScript 런타임이다
+		- back단의 코드 JavaScript 대체 >> 서브 (채팅 서버, 보조 서버) >> npm 학습 
+		- Node.js는 JavaScript를 로컬에서 Java처럼 쓸 수 있게 해준다 
+		
+		문법 
+		- Java와 흡사함 
+		- 대소문자를 엄격하게 구분 
+		- 종결자 ;
+		- 타입 (var, const, let) : let i = 10; let s = "aaa"; const NUM = 100;
+		- 유연한 언어 : var v; 선언하고 v =10; 을 할 때 (값을 받는 시점에) 타입이 정해진다 >>number 
+		ex) int i = 10; double d = 3.14; 
+			연산자, 제어문(java와 동일), 객체 개념
+		- 사용법 (css 사용법과 동일)
+		- in-line(태그 안쪽에 : <p onclick="<script>...")
+		- internal(page 안에서 일반적으로 <head><script>...코드</head>)
+		- external(외부 파일: common.js >> link를 걸어서 쓰는 방식 >> 유지보수 용이 >> 재사용성)
+	*/
+	/* javascript 함수 생성 */
+	function call() { //java : public void call() {}
+				alert('internal');
+			}
+	
+	</script>
+	<script type="text/javascript" src="script/common.js"></script>
+</head>
+<body>
+	<h3>in-line</h3>
+	<input type="button" value="inline" onclick="alert('Hello')">	
+	<h3>internal</h3>
+	<input type="button" value="internal" onclick="call()">	
+	<h3>external</h3>
+	<input type="button" value="external" onclick="excall()">	
+	
+</body> 
+</html>
+
+
+
+

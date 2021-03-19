@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	
+		//while 
+		let i = 1;
+		let sum = 0;
+		while(i <= 10) {
+			sum+=i; 
+			i++;
+		}
+		document.write("sum : " + sum + "<br>" + i + "<br>"); //55, 1
+		
+		//for
+		let sum2 = 0;
+		for(let i = 0; i <= 10; i++) {
+			if(i % 3 === 0) {
+				console.log("i : " +i);
+				break;
+			}
+			console.log("for i : " +i);
+			sum2 += i;
+		}
+		document.write("sum : " + sum2 + "<br>");
+		
+		
+		//do ~while
+		let a = 1;
+		do {
+			document.write(a + "<br>");
+			a++;
+		}while(a < 11);
+		
+		//개선된 for >> for(int i : array)
+		//javascript >> for(let i in array)
+			
+		/* 
+			java 
+			- 정적(Array) : 배열 크기 고정 
+			- 동적(Collection) : 다양한 클래스 제공받음 (vector, arrayList, hashset ..)
+			int[] arr = new int[3];
+			int[] arr = new int[]{1,2,3};
+			int[] arr = {1,2,3};
+			
+			ArrayList al = new ArrayList();
+			a1.add(1);
+			a1.add(2);
+			
+			javascript >> 정적 + 동적 >> Array
+			선언 방법 
+			let arr = []; 가장 좋아하는 코드
+			arr.push();			
+		*/
+		
+		let arr = [10,20,30]; //좋은 냄시~
+		for(let i = 0; i < arr.length; i++) {
+			document.write(arr[i]+ "<br>");
+		}
+		
+		let eng = new Array(3); //나쁜 냄시~ 
+		for(let i = 0; i < eng.length; i++) {
+			document.write(eng[i]+ "<br>");
+		} //각각의 방이 타입 정보를 가지지 않는다 
+		//undefined
+		//undefined
+		//undefined
+		
+		eng[0] = 100;
+		eng[1] = 100;
+		eng[2] = 100;
+		//방이 타입을 갖게 하고 
+		//다시 출력 
+		document.write("<hr>");
+		for(let i = 0; i < eng.length; i++) {
+			document.write(eng[i]+ "<br>");
+		}
+		
+		//good >> 빈 배열 먼저 선언 후 초기화 
+		//javascript Array >> 자료구조 >> stack (LIFO)
+		let arr2 = [];
+		arr2.push(10);
+		arr2.push(20);
+		
+		//1. 배열 기본 생성 방법
+		let array = new Array(5); //bad 
+		
+		//2. 배열 생성 초기화 
+		let array2 = new Array(10,20,30); //bad 
+		
+		//3. 동적배열 
+		let array3 = [1,2,3];
+		let array4 = [];
+		array4.push(10);
+		array4.push(11);
+		document.write(array4.pop()); //11 
+		
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

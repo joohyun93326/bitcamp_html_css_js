@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		let str = "10+20+30";
+		document.write(str + "<br>"); 
+		
+		//1.eval() : js가 가지고있는 내장 함수 
+		//문자형 숫자를 숫자로! >> "10+20+30" 을 넣으면 10+20+30으로 인식하고 계산도 한다.
+		document.write("eval() : " +eval(str) +"<br>"); //eval(): 60
+		
+		//2.isNaN >> Not a Number >> 숫자 아니면 (true) >> 숫자면 (false)
+		document.write(isNaN("12345") + "<br>"); //false 
+		document.write(isNaN("12345A") + "<br>"); //true
+		document.write(isNaN("대한민국") + "<br>"); //true 
+		
+		//문자열 함수
+		//https://www.w3schools.com/jsref/jsref_obj_string.asp
+		
+		//Number 함수 
+		//https://www.w3schools.com/jsref/jsref_obj_number.asp
+		//https://www.w3schools.com/js/js_number_methods.asp
+	
+		let i = "100";
+		let j = "200";
+		document.write("결합 : " + (i + j)); // 결합 : 100200  
+		document.write("<br> 숫자변환: " + (Number(i) + Number(j))); //숫자변환 : 300
+		//Number();
+		//parseInt(); 
+		//parseFloat();
+		
+		//** 이벤트 ** 
+		//https://www.w3schools.com/js/js_events.asp
+		/*	Event	Description
+			onchange	An HTML element has been changed
+			onclick	The user clicks an HTML element
+			onmouseover	The user moves the mouse over an HTML element
+			onmouseout	The user moves the mouse away from an HTML element
+			onkeydown	The user pushes a keyboard key
+			
+			**
+			onload: 	The browser has finished loading the page
+			>>index.html >> body안에 있는 모든 요소를 메모리(웹 브라우저)에 로딩되고 난 후에 
+			[자동으로 이벤트가 호출]된다 언제? [finished loading the page] 이 시점에 
+			>>사건이 처리하는 행위를 만들자
+			
+			onblur() >> 포커스가 요소를 떠날 때 
+			onfocus() >> 포커스가 요소에 들어올 때 
+			
+		*/ 
+		function bodyload() { 
+				console.log("load");
+				//보장을 받는다
+				//**** body안에 모든 요소가 메모리에 올라가있다는 보장 ****
+				//==body안에 모든 요소를 여기서 가지고 놀 수 있다 !!!
+				let data = document.myform.money.value;
+				console.log(isNaN(data));
+			}
+			
+		function focusFunc() { 
+			document.getElementById("myinput").style.background="gold";
+		}
+		
+		function blurFunc() {
+			document.getElementById("myinput").style.background="white";
+		}
+		
+		function selectTag() {
+			let val = document.myform.sel.value;
+			alert(val);
+		}
+		
+		function changeColor(obj) {
+			//java : this 
+			//javascript : this 
+			
+			//POINT : javascript >> this(요소 자신)
+			//obj (this) >> <input type="text" onmouseover="changeColor(this)" onmouseout="">
+			console.log(obj);
+			obj.style.backgroundColor="gold";
+		}
+		
+		function changeColor2(obj) {
+			obj.style.backgroundColor="black";
+		}
+	
+	</script>
+</head>
+<body onload="bodyload()">
+   <form action="#" name="myform">
+      <input type="text" id="myinput" name="myinput" onfocus="focusFunc()" onblur="blurFunc()">
+      	<select name ="sel" onchange="">
+      		<option value="A">AA</option>
+      		<option value="B">BB</option>
+      		<option value="C">CC</option>
+      		<option value="D">DD</option>
+      	</select>
+      	<br>
+      	<input type="text" onmouseover="changeColor(this)" onmouseout="changeColor2(this)">
+      	<!-- 여기서 this는 input태그. -->
+      	<br>
+      	<input type="text" onkeypress="alert('안돼 안돼')">
+      	<br>
+      	<input type="text" value="1000" name="money">
+      	
+   </form>
+</body>
+</html>
+
+
+

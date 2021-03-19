@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>Outside myFunction() carName is undefined.</p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+</body>
+<script>
+//GLOBAL variable (모든 함수에서 사용 가능하다)
+var gname = "world";
+
+myFunction();
+function myFunction() {
+	//[ ****사용금지**** ]
+	//함수 안에 변수는 지역변수로 쓰겠다는 건데 타입을 지정하지 않으면 전역변수가 돼버림 
+	
+	aaa ="아무개"; //함수안에 타입이 없는 변수 : global
+	console.log(aaa);
+	
+	//Local JavaScript Variables
+    var carName = "Volvo"; 
+  	document.getElementById("demo1").innerHTML = typeof(carName) + " " + carName +"<hr>" ;
+  	//Global
+  	document.getElementById("demo3").innerHTML = typeof(gname) + " " + gname;
+}
+
+document.getElementById("demo2").innerHTML = typeof(carName) +"<hr>" ;
+document.getElementById("demo4").innerHTML = typeof(gname);
+</script>
+</html>
